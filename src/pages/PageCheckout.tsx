@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AppContext } from "../AppContext";
 
 export const PageCheckout = () => {
-	const { userName } = useContext(AppContext);
+	const { userName, cart } = useContext(AppContext);
 	return (
 		<>
 			{userName && (
@@ -12,6 +12,11 @@ export const PageCheckout = () => {
 					check your order.
 				</p>
 			)}
+			<div>
+				{cart.items.map((book) => {
+					return <div>{book.title}</div>;
+				})}
+			</div>
 		</>
 	);
 };
