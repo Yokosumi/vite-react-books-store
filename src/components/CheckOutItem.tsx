@@ -1,6 +1,6 @@
 import { ICheckoutItems } from "../interfaces";
 
-export const CheckoutItem = ({ url, bookTitle }: ICheckoutItems) => {
+export const CheckOutItem = ({ url, bookTitle }: ICheckoutItems) => {
 	return (
 		<>
 			<div className="flex gap-3 items-center mb-3">

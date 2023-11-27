@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AppContext } from "../AppContext";
-import { CheckoutItems } from "../components/CheckoutItems";
+import { CheckOutItem } from "../components/CheckOutItem";
 
 export const PageCheckout = () => {
 	const { userName, cart } = useContext(AppContext);
@@ -17,7 +17,7 @@ export const PageCheckout = () => {
 				{cart.items.map((book) => {
 					return (
 						<div className="flex gap-3 items-center mb-3">
-							<CheckoutItems
+							<CheckOutItem
 								url={`https://edwardtanguay.vercel.app/share/images/techBooks/${book.idCode}.jpg`}
 								bookTitle={book.title}
 							/>
