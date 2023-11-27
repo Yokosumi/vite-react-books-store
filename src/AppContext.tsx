@@ -26,7 +26,6 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 		(async () => {
 			const response = await axios.get(booksUrl);
 			const _books = response.data;
-			console.log(_books);
 			setBooks(_books);
 		})();
 	}, []);
