@@ -12,7 +12,7 @@ interface IAppProvider {
 export const AppContext = createContext<IAppContext>({} as IAppContext);
 
 export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
-	const [userName] = useState("Hans");
+	const [userName] = useState("Lydia");
 
 	return (
 		<AppContext.Provider
