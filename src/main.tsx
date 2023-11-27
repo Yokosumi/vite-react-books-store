@@ -10,6 +10,7 @@ import { PageWelcome } from "./pages/PageWelcome.tsx";
 import { PageBooks } from "./pages/PageBooks.tsx";
 import { PageCheckout } from "./pages/PageCheckout.tsx";
 import { Page404 } from "./pages/Page404.tsx";
+import { AppProvider } from "./AppContext.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -38,5 +39,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-	<RouterProvider router={router} />
+	<AppProvider>
+		<RouterProvider router={router} />
+	</AppProvider>
 );
