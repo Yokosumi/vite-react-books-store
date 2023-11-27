@@ -26,7 +26,7 @@ export const PageBooks = () => {
 						{books.map((book) => {
 							return (
 								<div
-									className="mt-2 border-2 border-slate-950 p-2 rounded-lg"
+									className="flex flex-col justify-between mt-2 border-2 border-slate-950 p-2 rounded-lg"
 									key={book.id}
 								>
 									<img
@@ -46,15 +46,13 @@ export const PageBooks = () => {
 											).length
 										}
 									</p>
-									{cart.items.length > 0 && (
-										<button
-											onClick={() =>
-												handleDeleteBook(book)
-											}
-										>
-											Delete 1
-										</button>
-									)}
+
+									<button
+										className="mt-2"
+										onClick={() => handleDeleteBook(book)}
+									>
+										remove one
+									</button>
 								</div>
 							);
 						})}
