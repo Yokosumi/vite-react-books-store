@@ -32,8 +32,8 @@ export const PageBooks = () => {
 								key={book.id}
 								src={`https://edwardtanguay.vercel.app/share/images/techBooks/${book.idCode}.jpg`}
 							/>
-							<p className="text-center">
-								Ordered:
+							<p className="text-center bg-black text-white p-2 rounded-lg">
+								Ordered:{" "}
 								{
 									cart.items.filter(
 										(item) => item.idCode === book.idCode
