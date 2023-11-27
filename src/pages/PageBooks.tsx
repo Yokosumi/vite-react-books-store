@@ -3,5 +3,7 @@ import { AppContext } from "../AppContext";
 
 export const PageBooks = () => {
 	const { userName } = useContext(AppContext);
-	return <p>Hello {userName}, please select your books.</p>;
+	return (
+		<>{userName && <p>Hello {userName}, please select your books.</p>}</>
+	);
 };
