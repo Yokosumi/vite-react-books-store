@@ -3,9 +3,8 @@ import { AppContext } from "../AppContext";
 import { ImSpinner9 } from "react-icons/im";
 
 export const PageBooks = () => {
-	const { userName, books, handleAddBookToCart, cart } =
+	const { userName, books, handleAddBookToCart, handleDeleteBook, cart } =
 		useContext(AppContext);
-	console.log(cart);
 
 	return (
 		<>
@@ -47,6 +46,15 @@ export const PageBooks = () => {
 											).length
 										}
 									</p>
+									{cart.items.length > 0 && (
+										<button
+											onClick={() =>
+												handleDeleteBook(book)
+											}
+										>
+											Delete 1
+										</button>
+									)}
 								</div>
 							);
 						})}

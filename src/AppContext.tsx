@@ -10,6 +10,7 @@ interface IAppContext {
 	setBooks: (books: IBook[]) => void;
 	cart: ICart;
 	handleAddBookToCart: (book: IBook) => void;
+	handleDeleteBook: (book: IBook) => void;
 }
 
 interface IAppProvider {
@@ -39,6 +40,21 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 		setCart(_cart);
 	};
 
+	const handleDeleteBook = (bookToDelete: IBook) => {
+		const updatedCart = structuredClone(cart);
+		let numberDeleted = 0;
+		updatedCart.items = updatedCart.items.filter((book) => {
+			if (book.id !== bookToDelete.id) {
+				return book;
+			} else {
+				if (numberDeleted > 0) return book;
+				numberDeleted++;
+			}
+		});
+
+		setCart(updatedCart);
+	};
+
 	return (
 		<AppContext.Provider
 			value={{
@@ -48,6 +64,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 				setBooks,
 				cart,
 				handleAddBookToCart,
+				handleDeleteBook,
 			}}
 		>
 			{children}
