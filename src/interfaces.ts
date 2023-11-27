@@ -4,3 +4,7 @@ export interface IBook {
 	title: string;
 	description: string;
 }
+
+export interface ICart {
+	items: IBook[];
+}

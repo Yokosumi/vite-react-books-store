@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { createContext } from "react";
-import { IBook } from "./interfaces";
+import { IBook, ICart } from "./interfaces";
 import axios from "axios";
 
 interface IAppContext {
@@ -8,6 +8,7 @@ interface IAppContext {
 	setUserName: (userName: string) => void;
 	books: IBook[];
 	setBooks: (books: IBook[]) => void;
+	cart: ICart;
 }
 
 interface IAppProvider {
@@ -21,6 +22,7 @@ export const AppContext = createContext<IAppContext>({} as IAppContext);
 export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 	const [userName, setUserName] = useState("");
 	const [books, setBooks] = useState([] as IBook[]);
+	const [cart] = useState<ICart>({} as ICart);
 
 	useEffect(() => {
 		(async () => {
@@ -36,6 +38,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 				setUserName,
 				books,
 				setBooks,
+				cart,
 			}}
 		>
 			{children}
