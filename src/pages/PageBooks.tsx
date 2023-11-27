@@ -2,7 +2,10 @@ import { useContext } from "react";
 import { AppContext } from "../AppContext";
 
 export const PageBooks = () => {
-	const { userName, books } = useContext(AppContext);
+	const { userName, books, handleAddBookToCart, cart } =
+		useContext(AppContext);
+	console.log(cart);
+
 	return (
 		<>
 			{userName && (
@@ -19,12 +22,24 @@ export const PageBooks = () => {
 			<div className="flex gap-3 flex-wrap">
 				{books.map((book) => {
 					return (
-						<div className="mt-2 border-2 border-slate-950 p-2 rounded-lg">
+						<div
+							className="mt-2 border-2 border-slate-950 p-2 rounded-lg"
+							key={book.id}
+						>
 							<img
-								className="my-2 w-40 h-fit"
+								className="my-2 w-40 h-fit cursor-pointer"
+								onClick={() => handleAddBookToCart(book)}
 								key={book.id}
 								src={`https://edwardtanguay.vercel.app/share/images/techBooks/${book.idCode}.jpg`}
 							/>
+							<p className="text-center">
+								Ordered:
+								{
+									cart.items.filter(
+										(item) => item.idCode === book.idCode
+									).length
+								}
+							</p>
 						</div>
 					);
 				})}
