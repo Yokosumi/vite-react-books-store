@@ -8,3 +8,8 @@ export interface IBook {
 export interface ICart {
 	items: IBook[];
 }
+
+export interface ICheckoutItems {
+	url: string;
+	bookTitle: string;
+}
