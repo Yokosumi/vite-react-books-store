@@ -48,7 +48,7 @@ export const PageBooks = () => {
 									</p>
 									{cart.items.find(
 										(item) => item.id === book.id
-									) ? (
+									) && (
 										<button
 											className="mt-2"
 											onClick={() =>
@@ -57,8 +57,6 @@ export const PageBooks = () => {
 										>
 											remove one
 										</button>
-									) : (
-										""
 									)}
 								</div>
 							);
