@@ -46,13 +46,20 @@ export const PageBooks = () => {
 											).length
 										}
 									</p>
-
-									<button
-										className="mt-2"
-										onClick={() => handleDeleteBook(book)}
-									>
-										remove one
-									</button>
+									{cart.items.find(
+										(item) => item.id === book.id
+									) ? (
+										<button
+											className="mt-2"
+											onClick={() =>
+												handleDeleteBook(book)
+											}
+										>
+											remove one
+										</button>
+									) : (
+										""
+									)}
 								</div>
 							);
 						})}
