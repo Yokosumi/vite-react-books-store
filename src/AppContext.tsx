@@ -26,11 +26,11 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 	const [cart, setCart] = useState<ICart>({ items: [] } as ICart);
 
 	useEffect(() => {
-		(async () => {
+		setTimeout(async () => {
 			const response = await axios.get(booksUrl);
 			const _books = response.data;
 			setBooks(_books);
-		})();
+		}, 2000);
 	}, []);
 
 	const handleAddBookToCart = (book: IBook) => {
