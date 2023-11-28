@@ -23,7 +23,15 @@ interface IStringAction {
 	payload: string;
 }
 
-const reducer = (state: IState, action: INumberAction | IStringAction) => {
+interface IErrorAction {
+	type: "error";
+	payload: string;
+}
+
+const reducer = (
+	state: IState,
+	action: INumberAction | IStringAction | IErrorAction
+) => {
 	const _state = structuredClone(state);
 	switch (action.type) {
 		case "increment":
@@ -32,9 +40,11 @@ const reducer = (state: IState, action: INumberAction | IStringAction) => {
 			break;
 		case "decrement":
 			_state.count -= action.payload;
+			_state.history.push(`subtracted ${action.payload}`);
 			break;
 		case "setTitle":
 			_state.title = action.payload;
+			_state.history.push(`changed title to: ${action.payload}`);
 			break;
 		default:
 			// todo: action.type to string
