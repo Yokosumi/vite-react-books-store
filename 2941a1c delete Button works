@@ -1,0 +1,24 @@
+[33mfdd68ce[m[33m ([m[1;36mHEAD -> [m[1;32mdev[m[33m, [m[1;31morigin/dev[m[33m, [m[1;31morigin/HEAD[m[33m)[m tried to refactor checkout rendering
+[33m268d4aa[m singular checkout item in
+[33m8d7728d[m CheckoutItem Component works
+[33m1f802b3[m conditional rendering from tenery to && operator
+[33md711f33[m conditional rendering for button works
+[33mf8cad83[m delete buttons
+[33m2941a1c[m delete Button works
+[33mcfbb717[m spinner in
+[33mc7ca84e[m page checkout works + settimeout added
+[33m1316461[m basic data in checkout
+[33m41bdbcb[m space added
+[33m77f9415[m filter function works
+[33m84ff6ae[m ICart + styling
+[33m960e923[m books availbe text in
+[33m947859c[m books rendered
+[33m874c25d[m books data fetched
+[33m1f826e4[m conditional rendering works
+[33m06779df[m chaning name in appcontext works
+[33m5a97fa0[m AppContext works
+[33m3e08d2c[m App Context in
+[33m4524103[m Checkout page in
+[33mf956bbe[m PageBooks in
+[33mf02d011[m initial commit
+[33md6e7380[m Initial commit
