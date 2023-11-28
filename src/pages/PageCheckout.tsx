@@ -3,7 +3,7 @@ import { AppContext } from "../AppContext";
 import { CheckOutItem } from "../components/CheckOutItem";
 
 export const PageCheckout = () => {
-	const { userName, cart } = useContext(AppContext);
+	const { userName, cartGroupedItems } = useContext(AppContext);
 	return (
 		<>
 			{userName && (
@@ -14,15 +14,16 @@ export const PageCheckout = () => {
 				</p>
 			)}
 			<div>
-				{cart.items.map((book) => {
+				{cartGroupedItems.map((groupedItem) => {
 					return (
-						<div className="flex gap-3 items-center mb-3">
+						<>
 							<CheckOutItem
-								key={book.id}
-								url={`https://edwardtanguay.vercel.app/share/images/techBooks/${book.idCode}.jpg`}
-								bookTitle={book.title}
+								key={groupedItem.book.id}
+								url={`https://edwardtanguay.vercel.app/share/images/techBooks/${groupedItem.book.idCode}.jpg`}
+								bookTitle={groupedItem.book.title}
+								amount={groupedItem.amount}
 							/>
-						</div>
+						</>
 					);
 				})}
 			</div>

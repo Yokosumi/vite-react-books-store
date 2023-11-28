@@ -12,4 +12,10 @@ export interface ICart {
 export interface ICheckoutItems {
 	url: string;
 	bookTitle: string;
+	amount: number;
+}
+
+export interface ICartGroupedItem {
+	book: IBook;
+	amount: number;
 }
